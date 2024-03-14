@@ -1,0 +1,202 @@
+// JAVA Assignment no 1 
+
+// Q1.Write a program that takes a numerical grade as input and outputs the corresponding letter 
+grade using if-else statements. 
+import java.util.Scanner;
+
+public class GradeConverter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter numerical grade: ");
+        int numericalGrade = scanner.nextInt();
+        
+        char letterGrade;
+        
+        if (numericalGrade >= 90 && numericalGrade <= 100) {
+            letterGrade = 'A';
+        } else if (numericalGrade >= 80 && numericalGrade < 90) {
+            letterGrade = 'B';
+        } else if (numericalGrade >= 70 && numericalGrade < 80) {
+            letterGrade = 'C';
+        } else if (numericalGrade >= 60 && numericalGrade < 70) {
+            letterGrade = 'D';
+        } else if (numericalGrade >= 0 && numericalGrade < 60) {
+            letterGrade = 'F';
+        } else {
+            System.out.println("Invalid input");
+            return;
+        }
+        
+        System.out.println("Letter grade: " + letterGrade);
+    }
+}
+
+
+/* Q2.Write a program that checks if a given year is a leap year or not using both if-else and 
+      switch-case.*/
+
+/* package CDAC ;
+import java.util.Scanner;
+
+public class Assignment1_1 {
+
+	public static void main(String[] args) {
+		Scanner in =new Scanner(System.in); 
+		int n=in.nextInt();
+	    
+	      if (n%400 ==0 || n%4==0)
+	      {
+	    	  System.out.println("Leap Year");
+	    	  
+	      }
+	      else 
+	    	  System.out.println("Not Leap Year");
+	
+
+	}
+
+} */
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Q3 Implement a simple calculator program that takes two numbers and an operator (+, -, *, /) as 
+      input and performs the operation using switch-case
+
+/*  package CDAC;
+import java.util.Scanner;
+public class Assignment1_3 {
+	public static void main(String []args) {
+		Scanner in =new Scanner(System.in); 
+		System.out.print("Enter the number :");
+		int n1 = in.nextInt();
+		System.out.print("Enter the Operator :");
+		char operation =in.next(). charAt(0);
+		System.out.print("Enter the number :");
+		int n2 = in.nextInt();
+		
+		switch (operation) {
+		case '+': 
+			     System.out.println(n1+n2);
+			     break;
+		case '-':
+			     System.out.println(n1-n2);
+			 break;
+		case '*':
+		         System.out.println(n1*n2);
+		     break;
+		case '/' : 
+                 System.out.println(n1/n2);
+		     break; 
+		     
+		  default :
+			   System.out.println("Invalid Operator");
+		  
+		}
+
+
+		
+
+	}
+
+}*/
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Q 4 ...   Write a program that takes a number representing a weekday (1-7) and prints the name of the 
+           weekday using switch-case.
+
+/*  package CDAC;
+import java.util.Scanner;
+public class Assignment1_3 {
+	public static void main(String []args) {
+		Scanner in =new Scanner(System.in); 
+		System.out.print("Enter the number :");
+                 int n1 = in.nextInt();
+
+		System.out.print("Enter the Operator :");
+		char operation =in.next(). charAt(0);
+
+		System.out.print("Enter the number :");
+		int n2 = in.nextInt();
+		
+		switch (operation) {
+		case '+': 
+			     System.out.println(n1+n2);
+			     break;
+		case '-':
+			     System.out.println(n1-n2);
+			 break;
+		case '*':
+		         System.out.println(n1*n2);
+		     break;
+		case '/' : 
+                 System.out.println(n1/n2);
+		     break; 
+		     
+		  default :
+			   System.out.println("Invalid Operator");
+		  
+		}
+
+
+		
+
+	}
+
+}*/
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+5)Write a program that takes a character as input and determines whether it’s a vowel or a 
+consonant using if-else. 
+import java.util.Scanner;
+
+public class VowelOrConsonant {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a character: ");
+        char ch = scanner.next().charAt(0);
+
+        if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) {
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ||
+                ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') {
+                System.out.println(ch + " is a vowel.");
+            } else {
+                System.out.println(ch + " is a consonant.");
+            }
+        } else {
+            System.out.println("Invalid input");
+        }
+    }
+}
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+ 
+6)Implement a program that calculates the Body Mass Index (BMI) based on height and weight 
+input using if-else to classify the BMI int categories (underweight, normal weight, overweight, 
+etc.).
+import java.util.Scanner;
+
+public class BMIcalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter your weight in kilograms: ");
+        double weight = scanner.nextDouble();
+        
+        System.out.print("Enter your height in meters: ");
+        double height = scanner.nextDouble();
+        
+        double bmi = weight / (height * height);
+        
+        System.out.println("Your BMI is: " + bmi);
+        
+        if (bmi < 18.5) {
+            System.out.println("You are underweight.");
+        } else if (bmi >= 18.5 && bmi < 25) {
+            System.out.println("You have a normal weight.");
+        } else if (bmi >= 25 && bmi < 30) {
+            System.out.println("You are overweight.");
+        } else {
+            System.out.println("You are obese.");
+        }
+    }
+}
