@@ -1,0 +1,270 @@
+Assignement no 5_1
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+   int year = sc.nextInt();
+        boolean leap = false;
+
+        // If the year is divisible by 4
+        if (year % 4 == 0) {
+            // If the year is a century
+            if (year % 100 == 0) {
+                // If the year is divisible by 400, it's a leap year
+                if (year % 400 == 0)
+                    leap = true;
+                else
+                    leap = false;
+            } else
+                leap = true; // If the year is not a century
+        } else
+            leap = false;
+
+        if (leap)
+            System.out.println(year + " is a leap year.");
+        else
+            System.out.println(year + " is not a leap year.");
+    }
+
+    }
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+package Assignment_5_2;
+
+import java.util.Scanner;
+
+class  BMI_Calculator {
+	private double height;
+	private double weight;
+
+	public BMI_Calculator(){
+		this.height = 1;
+		this.weight = 1;
+
+	}
+
+	public double getHeight() {
+		return height;
+	}
+
+	public void setHeight(double height) {
+		this.height = height;
+	}
+
+	public double getWeight() {
+		return weight;
+	}
+
+	public void setWeight(double weight) {
+		this.weight = weight;
+	}
+	public double calculateBMI() {
+		double BMI = weight / (height * height);
+		return BMI;
+	}
+}
+
+public class Program {
+	
+
+	public static void main(String[] args) {
+		BMI_Calculator cal = new BMI_Calculator();
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter height	:	");
+		 cal.setHeight(sc.nextDouble()) ;
+		 
+			System.out.println("Enter weight	:	");
+		 cal.setWeight(sc.nextDouble()) ;	
+		 
+		double result = cal.calculateBMI();
+		System.out.println("BMI	:	"+result+" kg/sq.m");
+
+
+	}
+
+}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+package Assignment_5_3;
+
+import java.util.Scanner;
+
+class  Book {
+	private String title;
+	private String author;
+	private String publisher;
+	private String isbn;
+	private int year;
+	private double price;
+	private int quantity;
+	
+	public Book() {
+		
+		this.title = null;
+		this.author = null;
+		this.publisher = null;
+		this.isbn = null;
+		this.year = 0;
+		this.price = 0;
+		this.quantity = 0;
+	}
+
+
+	public void setTitle(String title) {
+		this.title = title;
+        System.out.println("title	:	"+this.title);
+
+	}
+
+	
+
+	public void setAuthor(String author) {
+		this.author = author;
+        System.out.println(" author	:	"+this.author);
+
+	}
+
+	
+
+	public void setPublisher(String publisher) {
+		this.publisher = publisher;
+        System.out.println(" publisher	:	"+this.publisher);
+
+	}
+
+	
+
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+        System.out.println(" isbn	:	"+this.isbn);
+
+	}
+
+	
+
+	public void setYear(int year) {
+		this.year = year;
+        System.out.println(" year	:	"+this.year);
+
+	}
+
+	
+
+	public void setPrice(double price) {
+		this.price = price;
+        System.out.println(" price	:	"+this.price);
+
+	}
+
+
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+        System.out.println("Original Quantity	:	"+this.quantity);
+        
+
+	}
+
+	public void increaseQuantity(int i){
+		this.quantity = quantity + i;
+        System.out.println("increase Quantity	:	"+this.quantity);
+
+	}
+	
+	public void decreaseQuantity(int d){
+		this.quantity = quantity - d;
+        System.out.println("decrease Quantity	:	"+this.quantity);
+
+	}
+	
+	public double getInventoryValue(){
+		double Inventory = price * quantity;
+		return Inventory;
+	}
+}
+
+public class Program {
+	
+
+	public static void main(String[] args) {
+		Book book = new Book();
+		Scanner sc = new Scanner(System.in);
+		
+		book.setTitle("JAVA: THE COMPLETE REFERENCE");
+		book.setAuthor("Herbert Schildt");
+		book.setPublisher("McGraw Hill Education");
+		book.setIsbn("007063677X");
+        book.setYear(2017);
+        book.setPrice(965);
+        book.setQuantity(500);
+
+        book.increaseQuantity(400);
+        book.decreaseQuantity(200);
+		
+        double total_Inventory = book.getInventoryValue();		
+        System.out.println("total_Inventory	:	"+total_Inventory);
+		
+		
+
+
+	}
+
+}
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+package Assignment5_4;
+
+import java.util.Scanner;
+
+class  TelephoneBill{
+	String CustomerName; 
+	double PhoneNumber;
+	int NumberOfCalls;
+	int Duration;
+	
+	public void AcceptInputs(){
+    	Scanner sc = new Scanner(System.in);
+    	
+	System.out.println("Customer Name	:	");
+    this.CustomerName =	sc.next();
+	System.out.println("Phone Number	:	");
+    this.PhoneNumber = sc.nextDouble();
+    System.out.println("NumberOfCalls	:	");
+    this.NumberOfCalls = sc.nextInt();
+    System.out.println("Duration	:	");
+    this.Duration = sc.nextInt();
+
+    }
+	
+ public void calculateBill(){
+	 int charge = 1;
+		if (this.NumberOfCalls<=100 && Duration >= 1 ) {
+			 charge = 50 * NumberOfCalls;	
+			System.out.println(charge);
+		}
+		else if (this.NumberOfCalls>100 && Duration >= 1) {
+			 charge = 25 * NumberOfCalls;	
+			System.out.println("charge	:	"+charge+ " $");
+		}
+			
+ }
+ 
+}
+public class Program {
+public static void main(String[] args) {
+	TelephoneBill bill = new TelephoneBill();
+    
+    bill.AcceptInputs();
+     bill.calculateBill();
+}
+
+}
